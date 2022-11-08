@@ -25,12 +25,12 @@ public class Numeros {
             }
         }
     }
-    
-    public int getNumero(){
+
+    public int getNumero() {
         return this.numero;
     }
-    
-    public String getColor(){
+
+    public String getColor() {
         return this.color;
     }
 

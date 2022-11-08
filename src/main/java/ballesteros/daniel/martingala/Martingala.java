@@ -64,6 +64,7 @@ public class Martingala {
                         if (resultadoApuesta == usuario.getColorApuesta()) {
                             usuario.gana(cantidadApuesta);
                             System.out.println("El usuario gana la apuesta. Tiene ahora " + usuario.getSaldo() + " euros.");
+                            System.out.println("");
                         }
                         cantidadApuesta *= 2;
                     } while (resultadoApuesta != usuario.getColorApuesta());
@@ -87,6 +88,7 @@ public class Martingala {
                         if (resultadoApuesta == usuario.getColorApuesta()) {
                             usuario.gana(cantidadApuesta);
                             System.out.println("El usuario gana la apuesta. Tiene ahora " + usuario.getSaldo() + " euros.");
+                            System.out.println("");
                         }
                         cantidadApuesta *= 2;
                     } while (resultadoApuesta != usuario.getColorApuesta());
@@ -95,8 +97,12 @@ public class Martingala {
             }
 
         }
-        System.out.println("El usuario se ha quedado con " + usuario.getSaldo() + " euros.");
-        System.out.println("El usuario ha apostado " + contadorApuestas + " veces.");
+        System.out.println("""
+                           Resultado:
+                           \tVeces apostadas: """ + contadorApuestas
+                + "\n\tSaldo máximo que ha tenido: " + usuario.getSaldoMaximo() + " €"
+                + "\n\tEl usuario se ha quedado con: " + usuario.getSaldo() + " €");
+
     }
 
     public static boolean esEntero(String texto) {

@@ -13,10 +13,12 @@ public class Jugador {
     private String nombre;
     private int saldo;
     private String colorApuesta;
+    private int saldoMaximo;
 
     public Jugador(String nombre, int saldo) {
         this.nombre = nombre;
         this.saldo = saldo;
+        this.saldoMaximo = saldo;
         this.colorApuesta = "";
     }
 
@@ -32,6 +34,7 @@ public class Jugador {
 
     public void gana(int cantidadApostada) {
         this.saldo += (cantidadApostada * 2);
+        actualizaSaldoMaximo();
     }
 
     public void setColorApuesta(String color) {
@@ -41,8 +44,18 @@ public class Jugador {
     public String getColorApuesta() {
         return this.colorApuesta;
     }
-    
-    public int getSaldo(){
+
+    public int getSaldo() {
         return this.saldo;
+    }
+
+    public int getSaldoMaximo() {
+        return this.saldoMaximo;
+    }
+
+    private void actualizaSaldoMaximo() {
+        if (this.saldo > this.saldoMaximo) {
+            this.saldoMaximo = this.saldo;
+        }
     }
 }
